@@ -1,0 +1,12 @@
+# Ignore everything
+*
+
+# Except these
+!.gitignore
+!README.md
+!LICENSE
+!*.pdf
+!scripts/
+!scripts/**
+!figures/
+!figures/**
