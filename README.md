@@ -6,6 +6,12 @@ Aaron Green | April 2026
 
 ---
 
+## Status
+
+This repository is the **v1.0 public release snapshot** of the paper, tagged [`v1.0-2026-04-01`](../../releases/tag/v1.0-2026-04-01). All artifacts in this repo reflect the paper as submitted on 2026-04-01. Active spec and companion-doc development continues privately; future public releases will land here as new tags (v1.1, v1.2, ...). For citation, pin to the tag.
+
+---
+
 ## What This Is
 
 A causal-ontology research project deriving Standard Model structure from a single principle: Rosen's closure to efficient causation, formalized as a fixed-point equation in a Cartesian Closed Category and realized in the category of ternary causal hypergraphs with double-pushout rewriting.
