@@ -1,6 +1,6 @@
 # Closure Forces Structure
 
-**A Ternary Causal Hypergraph Realization of Rosen Closure with an NCG Bridge to Standard-Model Algebraic Invariants**
+**Rosen Closure and the Standard-Model Algebra**
 
 Aaron Green | March 2026 (revised May 2026)
 
@@ -8,7 +8,7 @@ Aaron Green | March 2026 (revised May 2026)
 
 ## Status
 
-This repository is the **v1.4 public release snapshot**
+This repository is the **v1.5 public release snapshot**
 (2026-05-08). All artifacts in this repo reflect the paper as
 revised on 2026-05-08. Tags:
 
@@ -16,15 +16,69 @@ revised on 2026-05-08. Tags:
   release.
 - [`v1.1-2026-05-05`](../../releases/tag/v1.1-2026-05-05) — May 5
   morphogenesis-programme + McClure review revision.
-- `v1.4-2026-05-08` — current revision (Lockwood red-team review,
-  joint meta-claim corpus, algebraic-translation campaign, Lean
-  track expansion, abstract + summary restructuring).
+- [`v1.4-2026-05-08`](../../releases/tag/v1.4-2026-05-08) — May 8
+  morning revision (Lockwood red-team review, joint meta-claim
+  corpus, algebraic-translation campaign, Lean track expansion,
+  abstract + summary restructuring).
+- `v1.5-2026-05-08` — current revision (purple-team review
+  integration: §Forward research programme + §availability
+  publication-discipline paragraph; title halved).
 
 For citation, pin to the relevant tag. v1.2 and v1.3 were internal
 milestones during the Lockwood revision and are not separately
 tagged. Active spec and companion-doc development continues
 privately; future public releases will land here as new tags
-(v1.5, v1.6, ...).
+(v1.6, v1.7, ...).
+
+## What's New in the v1.5 Revision
+
+The v1.5 revision (May 8 evening) integrates a Grok red → blue → purple
+synthesis review of v1.4 and applies a small set of paper-side polish
+edits. The synopsis externally validates the v1.4 framing arc
+(NCG-as-declared-completion, residual-inputs honesty, "Bedrock, not
+river," four-cause redistribution), and the prioritized future-work
+list maps onto existing paper structure with two paper-actionable gaps
+that this release closes.
+
+- **Title halved.** Old: "Closure Forces Structure: A Ternary Causal
+  Hypergraph Realization of Rosen Closure with an NCG Bridge to
+  Standard-Model Algebraic Invariants" (3 lines). New: "Closure Forces
+  Structure: Rosen Closure and the Standard-Model Algebra" (2 lines).
+  Drops the method-words; keeps the arc-verb load on the main title
+  ("Closure Forces Structure") and uses *Algebra* as the scope-honest
+  noun for what the paper actually derives — gauge group, Born rule,
+  particle content, $\sin^2\theta_W = 3/8$ — not the SM full stop,
+  which §endtoend + §bedrock specifically disarm.
+
+- **§"Forward research programme"** (new closing subsection in
+  §Summary, between §bedrock and §availability). Five priorities
+  consolidated as a single forward map: **F1** robustness and
+  adversarial testing, **F2** reduce or eliminate NCG externality,
+  **F3** spacetime emergence and gravity, **F4** quantitative RG /
+  Higgs / beyond-SM signatures, **F5** generality beyond ternary SM.
+  Each cross-referenced to the existing gap-by-gap and weak-link-by-
+  weak-link sections; the new subsection lets the paper carry its
+  own forward map alongside the per-gap and per-weak-link statuses.
+
+- **§availability publication-discipline paragraph.** §"Code and
+  paper availability" extended with a paragraph committing to the
+  publication discipline the v1.5 forward programme names: invitations
+  for external adversarial testing (searches of larger finite quotient
+  targets, non-standard composition rules $\mu$, rewrite families
+  beyond $R_2$), commitments to release negative results alongside
+  positive ones, explicit invitations for stress-tests of the
+  realisation functor $R$ extending the obstruction chain to admissible
+  adhesive categories beyond $\TCHyp$.
+
+- **Companion (private)** — `purple_team_review_response_v1.md`.
+  Records the synthesis verbatim (multi-persona: Tao opening, Bar-Yam
+  + McClure synthesis, Pearl + Gorard closing, Taleb risk assessment),
+  maps each priority to existing paper coverage, and identifies the
+  paper-actionable items distinct from already-tracked dashboard work.
+
+No spec entries changed; no S-IDs added or upgraded. Counts identical
+to v1.4. The v1.5 changes are paper-side framing + scope-discipline
+polish.
 
 ## What's New in the v1.4 Revision
 
@@ -150,10 +204,10 @@ parameters.** The 224 vacuum moduli (mass ratios, mixing angles,
 CP phases) are free within the spectral action minimum; the
 dimensional energy scale $\Lambda$ remains external calibration.
 
-The v1.4 revision sharpens the *scope* of the claim. The framework
-is bedrock, not river: it supplies the structural scaffolding any
-closed self-maintaining system must conform to, but does not
-propose substrate, dynamics, or dimensional values. Once a
+The v1.4 + v1.5 revisions sharpen the *scope* of the claim. The
+framework is bedrock, not river: it supplies the structural
+scaffolding any closed self-maintaining system must conform to, but
+does not propose substrate, dynamics, or dimensional values. Once a
 substrate is selected and meaning is applied, ratios are forced
 (S176's $c_3 : c_2 : c_1 = 6 : 6 : 10$ and $\sin^2\theta_W = 3/8$
 exactly in $\mathbb{Q}$), patterns are forced (the obstruction
@@ -166,15 +220,16 @@ instances.**
 
 ## Paper
 
-`closure_forces_structure.pdf` — the v1.4 (2026-05-08) revision
+`closure_forces_structure.pdf` — the v1.5 (2026-05-08) revision
 (5.0 MiB, 10 figures, Appendix G, 17 sections + 7 appendices +
-new closing subsections "The four causes, redistributed" and
-"Bedrock, not river").
+v1.4 closing subsections "The four causes, redistributed" and
+"Bedrock, not river" + v1.5 closing subsection "Forward research
+programme").
 
 ## Repository Structure
 
 ```
-closure_forces_structure.pdf      The paper (v1.4, 2026-05-08)
+closure_forces_structure.pdf      The paper (v1.5, 2026-05-08)
 README.md                         This file
 LICENSE                           Apache 2.0
 figures/                          v1.0 standalone figure-generation outputs
@@ -302,20 +357,20 @@ julia scripts/spec/catlab_proofs.jl
 
 ```
 @article{green2026closure,
-  title={Closure Forces Structure: A Ternary Causal Hypergraph
-         Realization of Rosen Closure with an NCG Bridge to
-         Standard-Model Algebraic Invariants},
+  title={Closure Forces Structure: Rosen Closure and the
+         Standard-Model Algebra},
   author={Green, Aaron},
   year={2026},
-  note={Revised 2026-05-08. Available at
+  note={Revised 2026-05-08 (v1.5). Available at
         https://github.com/IridiumSoftware/Closure-Forces-Structure---SM-Rosen-Hypergraphs}
 }
 ```
 
 For citation of the original v1.0 (March 2026) release, pin to
 tag `v1.0-2026-04-01`. For the v1.1 revision (May 5, 2026), pin
-to tag `v1.1-2026-05-05`. For the v1.4 revision (May 8, 2026),
-pin to tag `v1.4-2026-05-08`.
+to tag `v1.1-2026-05-05`. For the v1.4 revision (May 8 morning),
+pin to tag `v1.4-2026-05-08`. For the v1.5 revision (May 8
+evening, current), pin to tag `v1.5-2026-05-08`.
 
 ## License
 
