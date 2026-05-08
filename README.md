@@ -1,6 +1,6 @@
 # Closure Forces Structure
 
-**The Standard Model from Rosen Closure on Ternary Causal Hypergraphs**
+**A Ternary Causal Hypergraph Realization of Rosen Closure with an NCG Bridge to Standard-Model Algebraic Invariants**
 
 Aaron Green | March 2026 (revised May 2026)
 
@@ -8,96 +8,186 @@ Aaron Green | March 2026 (revised May 2026)
 
 ## Status
 
-This repository is the **v1.1 public release snapshot** (May 2026
-revision of the original April 2026 v1.0 submission). All artifacts
-in this repo reflect the paper as revised on 2026-05-05. The original
-March-2026 release remains available at the
-[`v1.0-2026-04-01`](../../releases/tag/v1.0-2026-04-01) tag; the
-present revision is tagged
-[`v1.1-2026-05-05`](../../releases/tag/v1.1-2026-05-05). For
-citation, pin to the relevant tag. Active spec and companion-doc
-development continues privately; future public releases will land
-here as new tags (v1.2, v1.3, ...).
+This repository is the **v1.4 public release snapshot**
+(2026-05-08). All artifacts in this repo reflect the paper as
+revised on 2026-05-08. Tags:
 
-## What's New in the v1.1 Revision
+- [`v1.0-2026-04-01`](../../releases/tag/v1.0-2026-04-01) — original
+  release.
+- [`v1.1-2026-05-05`](../../releases/tag/v1.1-2026-05-05) — May 5
+  morphogenesis-programme + McClure review revision.
+- `v1.4-2026-05-08` — current revision (Lockwood red-team review,
+  joint meta-claim corpus, algebraic-translation campaign, Lean
+  track expansion, abstract + summary restructuring).
 
-The May revision incorporates a structured review by Sean McClure and
-adds substantial material to the framework:
+For citation, pin to the relevant tag. v1.2 and v1.3 were internal
+milestones during the Lockwood revision and are not separately
+tagged. Active spec and companion-doc development continues
+privately; future public releases will land here as new tags
+(v1.5, v1.6, ...).
 
-- **Appendix G — The Q$_{102}$ Zygote and the Morphogenesis
-  Programme** (~270 lines, 7 subsections). Reframes the long-standing
-  G10 (continuum-limit) open problem: Q$_{102}$ is shown to be
-  *developmentally complete* for the SM (syntactic + Rosen + semantic
-  closure), so it is not an approximation of a larger continuum
-  object but the SM zygote itself. The right open question is
-  morphogenesis on the 224-dim vacuum moduli, not the $n \to \infty$
-  scaling limit. Eleven new spec entries (S180–S190) characterise the
-  modular time parameter, $K_\omega$ spectrum, mode architecture,
-  $\Lambda$-scan, IC-attractor signatures, and a dual Markov-blanket
-  structure (geometric $J$ + algebraic $A \leftrightarrow A^\circ$).
-- **Sean McClure 7-point review additions**: §1.1 (presupposition vs
-  derivation), §6 (scope of the uniqueness claim), §2.1 (CCC
-  necessity), §2.7 (CCC + DPO modularity), §11.4 (KO-dim 6 as
-  constructed not derived), §15.3 (end-to-end derivation status).
-- **10 TikZ/pgfplots figures** at the highest-impact theorem moments
-  (closure cycle, ternary arity, gauge-derivation tree, family
-  taxonomy, $a_4$ sector decomposition, three-level Markov-blanket
-  synthesis, GUT-ratio prediction, $K_\omega$ spectrum, $\Lambda$-scan
-  asymmetry, dual blanket schematic).
-- **Acknowledgments** extended: Brian Crabtree (insights on closure
-  dynamics), Vagid Abatchev (adversarial critiques driving
-  Haskell + Lean 4 ``proofs closer to the metal''), and Sean McClure
-  (review work).
-- **Spec growth**: 151 scorecard entries (March release) → **195**
-  (May release): **159 proved**, **33 verified**, **1 argued**.
-  Julia test suite: 72/72 pass; audit-engine: 0 errors / 0 warnings.
+## What's New in the v1.4 Revision
+
+The May 8 revision incorporates a structured red-team review by
+Stephen Lockwood, an algebraic-translation campaign sharpening
+selected `:verified` results to `:proved`, and a substantial Lean 4
+track expansion. The framework's claims are also reframed to
+disambiguate scope from a TOE / GUT reading.
+
+- **Lockwood red-team revision** (4 phases, all 16 actionable
+  items closed). Phase A: title softening (now naming the NCG
+  bridge explicitly), abstract framing, $U(1)$ terminology
+  cleanup. Phase B: $\beta$-2 typing in $\TCHyp$ unified across
+  the spec; $\mathrm{Hyp}_\tau$ as the general category, $\TCHyp$
+  as the $\tau = 3$ specialisation. Phase C: determinant-uniqueness
+  theorem replaces Gleason invocation; Hurwitz demoted from
+  load-bearing to comparison; $\mathrm{SU}(3)$ characterised as
+  the $\varepsilon$-preserving subgroup of $U(3)$. Phase D: $T_2$
+  functor split into $R$ (realisation) + $T$ (skeleton) at
+  Definition `def:RT-functors`.
+
+- **Joint meta-claim corpus** (24 new spec entries: schema
+  `Def_joint_meta_claim` / S192 + 23 instances S193–S215).
+  The schema defines the convention for representing
+  triadic-coordination-engine (TCE) discoveries: structural
+  observations about the spec itself, surfaced by similarity-based
+  triadic-closure search, recorded as `:argued` claims. The 23
+  instances span three Jaccard score-bands — high (>0.85,
+  multi-angle on one object), mid (0.70–0.85, cross-framing
+  invariance), and low (0.55–0.70, convergence / structural echo).
+
+- **Algebraic-translation campaign**. S174 / S175 / S176 upgraded
+  from `:verified` (computational, Float64) to `:proved`
+  (algebraic, Julia `Rational{BigInt}` exact arithmetic). S176
+  verifies the $\Lambda$-scale unification ratio
+  $c_3 : c_2 : c_1 = 6 : 6 : 10$ and $\sin^2\theta_W = 3/8$
+  exactly in $\mathbb{Q}$ — no Float64 corroboration in the
+  derivation chain. Companion: `algebraic_translation_manifest_v1.md`
+  (private).
+
+- **Lean 4 track expansion**, 5 → 13 entries. The
+  Markov-blanket family is now substantially Lean-verified:
+  S165 (algebra-level order-one axiom as Markov blanket), S162 +
+  S163 (Hessian-level spectral-action Hessian factorising into
+  Friston form), S187 ($K_\omega$ modular generator
+  $J$-equivariance — the morphogenesis-time generator). Plus
+  spectator + cross-product algebraic identities at S29
+  (`ConjugationTransmutation`), S32 (`CrossUnderLinear`), S94
+  (`UniversalViability`), S143 (`WedderburnArtin`).
+
+- **Abstract restructured**, compressed to ~1 page with bold-lead
+  headliner paragraphs: (1) SM gauge group from closure, (2) NCG
+  admissibility addresses anomaly cancellation, (3) quotient
+  cascade $Q_{24} / Q_{51} / Q_{102}$, (4) $Q_{102}$
+  morphogenesis (three-level Markov-blanket synthesis). The
+  pre-existing "What is not claimed" honesty markers are retained;
+  a new affirmative "What *is* claimed" closer names the
+  rep-theoretic completeness of the obstruction chain and
+  forecloses framework-agnostic re-encoding.
+
+- **§ "The four causes, redistributed"** (new closing subsection
+  in §Summary). Closes the rhetorical arc opened in §Introduction's
+  Aristotle setup. **Efficient** cause is restored in Rosen's
+  sense and made generative. **Material** cause is voided (the
+  realisation functor of `def:RT-functors` shows the obstruction
+  chain holds in any adhesive category with DPO dynamics
+  satisfying a mild representability hypothesis — substrate is
+  irrelevant). **Formal** cause is restored as load-bearing (the
+  obstruction chain itself is the formal-cause derivation).
+  **Final** cause is deflated and reabsorbed (no goal beyond
+  closure itself; closure read teleologically, not metaphysics
+  restored).
+
+- **§ "Bedrock, not river"** (new closing subsection — scope
+  disambiguation for TOE / GUT-frame red-teams). The framework is
+  agnostic to the core: structural, not meaningful. It does not
+  propose a substrate, a dynamics, or a set of dimensional
+  values. What it supplies — and what is contended to be a
+  *stronger* claim, not a weaker one — is the structural
+  scaffolding any TOE or GUT must conform to if its dynamics is
+  closed to efficient causation. The work is "not a destination
+  but a passage."
+
+- **Spec growth**. 195 scorecard entries (May 5) → **219**
+  (May 8): **162 proved unconditional**, **30 verified**,
+  **23 argued joint-meta-claim instances** (the new
+  `Def_joint_meta_claim` corpus). Total spec: 279 entries
+  (including 40 `:defined`, of which `Def_joint_meta_claim` /
+  S192 is the schema). **9 entries** carry CatLab.jl categorical
+  machine proofs; **13 entries** Lean 4 machine-verified content
+  (up from 5); **3 entries** (S174 / S175 / S176) carry exact
+  $\mathbb{Q}$-arithmetic algebraic proofs in Julia (up from 0
+  in v1.1). Julia test suite: 72/72 pass; audit-engine:
+  0 errors / 0 warnings.
+
+### Previous Revisions
+
+- **v1.1** (2026-05-05): Q$_{102}$ zygote / morphogenesis-programme
+  reframing of G10 (continuum-limit) open problem; eleven new spec
+  entries (S180–S190) characterising modular time, $K_\omega$
+  spectrum, mode architecture, $\Lambda$-scan, IC-attractor
+  signatures, and dual Markov-blanket structure; Sean McClure
+  7-point review additions; 10 inline TikZ / pgfplots figures;
+  spec 151 → 195 entries.
+- **v1.0** (2026-04-01): initial public release.
 
 ## What This Is
 
-A causal-ontology research project deriving Standard Model structure
-from a single principle: Rosen's closure to efficient causation,
-formalized as a fixed-point equation in a Cartesian Closed Category
-and realized in the category of ternary causal hypergraphs with
-double-pushout rewriting.
+A causal-ontology research project deriving Standard Model
+*structure* from a single principle: Rosen's closure to efficient
+causation, formalised as a fixed-point equation in a Cartesian
+Closed Category and realised in $\TCHyp$, the category of ternary
+causal hypergraphs with double-pushout rewriting.
 
-The main result: a chain of algebraic obstructions eliminates every
-decoration structure except the SM gauge group [SU(3) x SU(2) x
-U(1)\_Y] x SU(3)\_gen, the Born-rule probability measure, and a
-KO-dimension 6 spectral triple forcing the lepton sector and anomaly
-cancellation — with zero free structural parameters. The 224 vacuum
-moduli (mass ratios, mixing angles, CP phases) are free within the
-spectral action minimum.
+The main result: a chain of algebraic obstructions eliminates
+every decoration structure on $\TCHyp$ except the SM gauge group
+$[\mathrm{SU}(3) \times \mathrm{SU}(2) \times U(1)] \times
+\mathrm{SU}(3)_{\mathrm{gen}}$ (with the $U(1)$ factor identified
+with hypercharge $U(1)_Y$), the Born-rule probability measure, and
+a $\mathrm{KO}$-dimension 6 spectral triple forcing the lepton
+sector and anomaly cancellation. **No free dimensionless structural
+parameters.** The 224 vacuum moduli (mass ratios, mixing angles,
+CP phases) are free within the spectral action minimum; the
+dimensional energy scale $\Lambda$ remains external calibration.
 
-The v1.1 revision reframes the continuum-limit question (G10) as
-**morphogenesis on the Q$_{102}$ moduli**: Q$_{102}$ itself is
-developmentally complete for the SM (Rosen-closed, syntactically
-self-reproducing, semantically complete spectral triple), so the
-right open question is the dynamical structure that unfolds the
-zygote into observed scales — not the graph-size scaling limit.
+The v1.4 revision sharpens the *scope* of the claim. The framework
+is bedrock, not river: it supplies the structural scaffolding any
+closed self-maintaining system must conform to, but does not
+propose substrate, dynamics, or dimensional values. Once a
+substrate is selected and meaning is applied, ratios are forced
+(S176's $c_3 : c_2 : c_1 = 6 : 6 : 10$ and $\sin^2\theta_W = 3/8$
+exactly in $\mathbb{Q}$), patterns are forced (the obstruction
+chain on $Q_{24}$, $Q_{51}$, $Q_{102}$), and the noise of
+unconstrained model-building is cut through.
 
-**195 scorecard entries: 159 proved unconditional, 33 computationally
-verified, 1 argued.**
+**219 scorecard entries: 162 proved unconditional,
+30 computationally verified, 23 argued joint-meta-claim
+instances.**
 
 ## Paper
 
-`closure_forces_structure.pdf` — the May 2026 revision (5.0 MiB,
-10 figures, Appendix G, 17 sections + 7 appendices).
+`closure_forces_structure.pdf` — the v1.4 (2026-05-08) revision
+(5.0 MiB, 10 figures, Appendix G, 17 sections + 7 appendices +
+new closing subsections "The four causes, redistributed" and
+"Bedrock, not river").
 
 ## Repository Structure
 
 ```
-closure_forces_structure.pdf      The paper (v1.1, May 2026 revision)
+closure_forces_structure.pdf      The paper (v1.4, 2026-05-08)
 README.md                         This file
 LICENSE                           Apache 2.0
 figures/                          v1.0 standalone figure-generation outputs
                                   (kept for reproducibility of the original
-                                  release; v1.1 figures are inline TikZ)
+                                  release; v1.1+ figures are inline TikZ)
 scripts/
   spec/                           CatLab.jl categorical machine proofs
-  exact_verification/             Julia proofs (Rational{BigInt} exact arithmetic)
+  exact_verification/             Julia proofs (Rational{BigInt} exact arithmetic),
+                                  including the v1.4 algebraic-translation
+                                  artefacts for S174 / S175 / S176
   quotient_construction/          Q_24, Q_48, Q_102 gauge-equivalence quotients
                                   (+ Q_90 family characterisation, S178/S179)
-  morphogenesis/                  v1.1 NEW — observation-only morphogenesis
+  morphogenesis/                  v1.1+ — observation-only morphogenesis
                                   programme verifications (S182–S190): K_ω
                                   spectrum, mode architecture, Λ-scan,
                                   J-equivariant Markov-blanket, algebraic
@@ -118,25 +208,30 @@ scripts/
 | Type | Meaning | Example |
 |------|---------|---------|
 | **proof** | Deductive from axioms | Discrete obstruction (Thm 5.9b) |
-| **algebraic** | Exact symbolic computation = proof | Q_48 verification in Rational{BigInt} |
+| **algebraic** | Exact symbolic computation = proof | S174 / S175 / S176 in Rational{BigInt} (v1.4) |
+| **lean-proved** | Lean 4 machine-verified content | Markov-blanket family S162 / S163 / S165 / S187 (v1.4) |
 | **standard** | Established result with citation | Hurwitz classification, Gleason's theorem |
 | **catlab** | CatLab.jl categorical construction | Adhesivity (S25), DPO (S26) |
 | **computational** | Numerical simulation (not proof) | d_s formula, curvature law |
-| **argued** | Structural argument, not yet machine-checked | Φ_F eigenvalue equivalence (S183) |
+| **argued** | Structural argument, not yet machine-checked | TCE-surfaced joint meta-claims S193–S215 (v1.4) |
 
-Scripts in `exact_verification/` produce results of type **algebraic**.
-Scripts in `morphogenesis/` produce results of type **computational**
-(observation-only structural verifications on Q$_{102}$'s fixed
-spectral triple — no state evolution, no time-stepping). Scripts
-elsewhere produce results of type **computational** unless noted.
+Scripts in `exact_verification/` produce results of type
+**algebraic**. Scripts in `morphogenesis/` produce results of type
+**computational** (observation-only structural verifications on
+$Q_{102}$'s fixed spectral triple — no state evolution, no
+time-stepping). Scripts elsewhere produce results of type
+**computational** unless noted.
 
 ## Requirements
 
-**Julia** (1.10+): CatLab.jl, AlgebraicRewriting.jl, exact arithmetic
-(Rational{BigInt}).
+**Julia** (1.10+): CatLab.jl, AlgebraicRewriting.jl, exact
+arithmetic (`Rational{BigInt}`).
 
-**Python** (3.10+): NumPy, SciPy, numba (for the Q_102 order-one
-kernel construction). No other dependencies.
+**Python** (3.10+): NumPy, SciPy, numba (for the $Q_{102}$
+order-one kernel construction). No other dependencies.
+
+**Lean 4** (toolchain pinned via `lean-toolchain`): for the 13
+Lean-verified entries. Mathlib used for the Markov-blanket family.
 
 ## Reproducing Key Results
 
@@ -187,6 +282,12 @@ julia scripts/exact_verification/q102_exact_verification_v1.jl
 julia scripts/exact_verification/batch2_exact_verification_v3.jl
 ```
 
+**Algebraic translations (v1.4, Julia `Rational{BigInt}`):**
+```
+julia scripts/exact_verification/g6a_c168_sm_verification_algebraic_v1.jl
+julia scripts/exact_verification/g6a_closure_rep_ca_algebraic_v1.jl
+```
+
 **IC-independence (200 seeds, threshold sensitivity):**
 ```
 python scripts/ic_diagnostics/ic_threshold_diagnostic_v1.py
@@ -201,18 +302,20 @@ julia scripts/spec/catlab_proofs.jl
 
 ```
 @article{green2026closure,
-  title={Closure Forces Structure: The Standard Model Lagrangian from
-         Rosen Closure in Ternary Causal Hypergraphs},
+  title={Closure Forces Structure: A Ternary Causal Hypergraph
+         Realization of Rosen Closure with an NCG Bridge to
+         Standard-Model Algebraic Invariants},
   author={Green, Aaron},
   year={2026},
-  note={Revised May 2026. Available at
+  note={Revised 2026-05-08. Available at
         https://github.com/IridiumSoftware/Closure-Forces-Structure---SM-Rosen-Hypergraphs}
 }
 ```
 
-For citation of the original v1.0 (March 2026) release, pin to tag
-`v1.0-2026-04-01`. For citation of the v1.1 revision (May 2026), pin
-to tag `v1.1-2026-05-05`.
+For citation of the original v1.0 (March 2026) release, pin to
+tag `v1.0-2026-04-01`. For the v1.1 revision (May 5, 2026), pin
+to tag `v1.1-2026-05-05`. For the v1.4 revision (May 8, 2026),
+pin to tag `v1.4-2026-05-08`.
 
 ## License
 
