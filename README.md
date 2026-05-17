@@ -8,9 +8,9 @@ Aaron Green | March 2026 (revised May 2026)
 
 ## Status
 
-This repository is the **v1.5 public release snapshot**
-(2026-05-08). All artifacts in this repo reflect the paper as
-revised on 2026-05-08. Tags:
+This repository is the **v1.9 public release snapshot**
+(2026-05-16). All artifacts in this repo reflect the paper as
+revised on 2026-05-16. Tags:
 
 - [`v1.0-2026-04-01`](../../releases/tag/v1.0-2026-04-01) — original
   release.
@@ -20,15 +20,67 @@ revised on 2026-05-08. Tags:
   morning revision (Lockwood red-team review, joint meta-claim
   corpus, algebraic-translation campaign, Lean track expansion,
   abstract + summary restructuring).
-- `v1.5-2026-05-08` — current revision (purple-team review
-  integration: §Forward research programme + §availability
-  publication-discipline paragraph; title halved).
+- [`v1.5-2026-05-08`](../../releases/tag/v1.5-2026-05-08) — May 8
+  evening revision (purple-team review integration: §Forward
+  research programme + §availability publication-discipline
+  paragraph; title halved).
+- `v1.9-2026-05-16` — current revision (**AT-3-bis honesty
+  correction** — a sign error in the Python imaginary-sector $D_F$
+  basis was found; on the corrected 558-dimensional exact basis the
+  structural derivations of eleven entries were falsified and those
+  entries downgraded `:verified → :argued`. Plus Lean-track
+  expansion 13 → 16 entries and the closure-growth endofunctor
+  formalisation. Folds in the v1.6–v1.8 internal revisions).
 
-For citation, pin to the relevant tag. v1.2 and v1.3 were internal
-milestones during the Lockwood revision and are not separately
-tagged. Active spec and companion-doc development continues
-privately; future public releases will land here as new tags
-(v1.6, v1.7, ...).
+For citation, pin to the relevant tag. v1.2, v1.3 and v1.6–v1.8
+were internal milestones not separately tagged in this public
+repository; v1.6 (S183 Phase 2/3 arc), v1.7 (§GUToE gap analysis)
+and v1.8 (§Route-A/B generalisability) are folded into the v1.9
+snapshot. Active spec, Haskell core, Lean 4 track, and
+companion-doc development continue privately; future public
+releases will land here as new tags.
+
+## What's New in the v1.9 Revision
+
+The v1.9 revision (May 16) is led by an **honesty correction** and a
+Lean-track expansion. It also folds in three internal revisions
+(v1.6–v1.8) that were not separately published to this repository.
+
+- **AT-3-bis honesty correction (the headline).** The AT-3-bis
+  audit arc (v304–v309) found that the order-one $D_F$ basis
+  underlying the S183 closure-defect Hessian programme carried a
+  **sign error in the Python imaginary-sector basis construction**.
+  On the corrected 558-dimensional exact basis (279 symmetric +
+  279 antisymmetric) the structural derivations were re-validated
+  and **falsified**. Eleven spec entries — S128, S183, and
+  S216–S224 — are downgraded `:verified → :argued` throughout the
+  paper (Appendix "Morphogenesis status", Remark "vev moduli").
+  The empirical numbers stand as Python-basis computations but are
+  no longer load-bearing structural facts. The S180–S190 K$_\omega$
+  spectrum results are independent of that basis and stand
+  unchanged. This is a deliberate retraction: a verification claim
+  the corrected evidence cannot support is withdrawn, in print.
+
+- **Lean 4 track expansion, 13 → 16 entries.** New machine-verified
+  content at S45, S166, and S188 ($K_\omega$ algebraic Markov
+  blanket via Tomita–Takesaki). Plus the **closure-growth
+  endofunctor** $F = M/{\sim}$ formalised in Lean over the Gaussian
+  integers — multiway expansion then gauge quotient as a genuine
+  functor — with Q$_{24}$'s 24-cluster fixed point machine-verified
+  (`native_decide`). `Lemma_6_8` is proved unconditionally over
+  $\mathrm{SU}(3)$, and the Layer-6 natural isomorphism discharging
+  the $T_2$-commutativity conjectures (functor-level) is landed.
+
+- **Folded-in internal revisions.** v1.6 (S183 Phase 2/3 empirical
+  arc — seven compose recipes tested, rank-12 Hessian column space
+  characterised, later falsified by AT-3-bis), v1.7 (§"GUToE gap
+  analysis" — the six-phase CFS → GUToE programme executing F1–F5),
+  and v1.8 (§"Route-A/B generalisability"). All three are present
+  in the v1.9 paper.
+
+The spec counts move with the AT-3-bis downgrade: `:argued` rises
+(the eleven downgraded entries join the joint-meta-claim corpus),
+`:verified` falls by one. No `:proved` entry changed.
 
 ## What's New in the v1.5 Revision
 
@@ -200,9 +252,13 @@ $[\mathrm{SU}(3) \times \mathrm{SU}(2) \times U(1)] \times
 with hypercharge $U(1)_Y$), the Born-rule probability measure, and
 a $\mathrm{KO}$-dimension 6 spectral triple forcing the lepton
 sector and anomaly cancellation. **No free dimensionless structural
-parameters.** The 224 vacuum moduli (mass ratios, mixing angles,
+parameters.** The vacuum moduli (mass ratios, mixing angles,
 CP phases) are free within the spectral action minimum; the
 dimensional energy scale $\Lambda$ remains external calibration.
+The dimension of that moduli space is under revision following
+the v1.9 AT-3-bis correction (see Remark "vev moduli" in the
+paper) — the pre-v1.9 figure of 224 rested on the basis that the
+correction falsified.
 
 The v1.4 + v1.5 revisions sharpen the *scope* of the claim. The
 framework is bedrock, not river: it supplies the structural
@@ -214,17 +270,21 @@ exactly in $\mathbb{Q}$), patterns are forced (the obstruction
 chain on $Q_{24}$, $Q_{51}$, $Q_{102}$), and the noise of
 unconstrained model-building is cut through.
 
-**219 scorecard entries: 162 proved unconditional,
-30 computationally verified, 23 argued joint-meta-claim
-instances.**
+**228 scorecard entries: 162 proved unconditional,
+29 computationally verified, 34 argued, 3 defined** (288 entries
+total in the formal spec; 16 carry Lean 4 machine-verified
+content; 9 carry CatLab.jl categorical proofs). The `:argued`
+count includes the 23 joint-meta-claim instances and the 11
+entries downgraded by the v1.9 AT-3-bis correction.
 
 ## Paper
 
-`closure_forces_structure.pdf` — the v1.5 (2026-05-08) revision
-(5.0 MiB, 10 figures, Appendix G, 17 sections + 7 appendices +
-v1.4 closing subsections "The four causes, redistributed" and
-"Bedrock, not river" + v1.5 closing subsection "Forward research
-programme").
+`closure_forces_structure.pdf` — the v1.9 (2026-05-16) revision
+(5.1 MiB). Includes the v1.4/v1.5 closing subsections ("The four
+causes, redistributed", "Bedrock, not river", "Forward research
+programme"), the v1.7 §"GUToE gap analysis", the v1.8 §"Route-A/B
+generalisability", and the v1.9 AT-3-bis re-validation appendix
+("Morphogenesis status").
 
 ## Repository Structure
 
@@ -236,7 +296,10 @@ figures/                          v1.0 standalone figure-generation outputs
                                   (kept for reproducibility of the original
                                   release; v1.1+ figures are inline TikZ)
 scripts/
-  spec/                           CatLab.jl categorical machine proofs
+  spec/                           Formal spec (catlab_spec.jl, 288 entries),
+                                  test suite (test_catlab_spec.jl, 72
+                                  testsets), and CatLab.jl categorical
+                                  machine proofs (catlab_proofs.jl)
   exact_verification/             Julia proofs (Rational{BigInt} exact arithmetic),
                                   including the v1.4 algebraic-translation
                                   artefacts for S174 / S175 / S176
@@ -285,8 +348,9 @@ arithmetic (`Rational{BigInt}`).
 **Python** (3.10+): NumPy, SciPy, numba (for the $Q_{102}$
 order-one kernel construction). No other dependencies.
 
-**Lean 4** (toolchain pinned via `lean-toolchain`): for the 13
-Lean-verified entries. Mathlib used for the Markov-blanket family.
+**Lean 4** (toolchain pinned via `lean-toolchain`): for the 16
+Lean-verified entries. Mathlib used for the Markov-blanket family
+and the closure-growth endofunctor formalisation.
 
 ## Reproducing Key Results
 
@@ -353,6 +417,14 @@ python scripts/ic_diagnostics/ic_threshold_diagnostic_v1.py
 julia scripts/spec/catlab_proofs.jl
 ```
 
+**Formal spec + test suite (288 entries, 72 testsets):**
+```
+julia scripts/spec/test_catlab_spec.jl
+```
+`catlab_spec.jl` is the full formal specification — every named
+claim with its S-ID, logic tier, evidence type, and status.
+`test_catlab_spec.jl` is the structural-validation suite over it.
+
 ## Citation
 
 ```
@@ -361,7 +433,7 @@ julia scripts/spec/catlab_proofs.jl
          Standard-Model Algebra},
   author={Green, Aaron},
   year={2026},
-  note={Revised 2026-05-08 (v1.5). Available at
+  note={Revised 2026-05-16 (v1.9). Available at
         https://github.com/IridiumSoftware/Closure-Forces-Structure---SM-Rosen-Hypergraphs}
 }
 ```
@@ -370,7 +442,8 @@ For citation of the original v1.0 (March 2026) release, pin to
 tag `v1.0-2026-04-01`. For the v1.1 revision (May 5, 2026), pin
 to tag `v1.1-2026-05-05`. For the v1.4 revision (May 8 morning),
 pin to tag `v1.4-2026-05-08`. For the v1.5 revision (May 8
-evening, current), pin to tag `v1.5-2026-05-08`.
+evening), pin to tag `v1.5-2026-05-08`. For the current v1.9
+revision (May 16, 2026), pin to tag `v1.9-2026-05-16`.
 
 ## License
 
